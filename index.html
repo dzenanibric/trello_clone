@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trello Clone</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+</head>
+<body>
+    <div class="container">
+        <div id="dashboard" class="container__dashboard">
+            <h1>Trello Clone</h1>
+            <div class="container__dashboard__gridbox">
+                <div id="create-new-project" class="container__dashboard__gridbox--item">
+                    <h3>Create New Project</h3>
+                </div>
+                <div id="continue-last-project" class="container__dashboard__gridbox--item">
+                    <h3>Continue Last Project</h3>
+                    <p id="last-project">name-of-last-project</p>
+                </div>
+                <div id="previous-project1" class="container__dashboard__gridbox--item">
+                    <h3>PREVIOUS PROJECT 1</h3>
+                    <small id="date">11.05.2022.</small>
+                </div>
+                <div id="previous-project2" class="container__dashboard__gridbox--item">
+                    <h3>PREVIOUS PROJECT 2</h3>
+                    <small id="date">11.05.2022.</small>
+                </div>
+            </div>
+        </div>
+        <div id="project-screen" class="container__projectScreen">
+            <div class="container__projectScreen__gridbox">
+                <div id="to-do" class="container__projectScreen__gridbox--item">
+                    <h1>TO-DO</h1>
+                    <div class="head">
+                        <textarea name="add-todo-text" id="add-todo-text" cols="30" rows="10"></textarea>
+                        <button id="add-task">ADD</button>
+                    </div>
+                    <div class="field">
+
+                    </div>
+                </div>
+                <div id="doing" class="container__projectScreen__gridbox--item">
+                    <h1>DOING</h1>
+                    <div class="field">
+
+                    </div>
+                </div>
+                <div id="done" class="container__projectScreen__gridbox--item">
+                    <h1>DONE</h1>
+                    <div class="field">
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="js/index.js"></script>
+</body>
+</html>

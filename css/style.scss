@@ -1,0 +1,115 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+@mixin displayFlex($dir, $jus, $ali){
+    display: flex;
+    flex-direction: $dir;
+    justify-content: $jus;
+    align-items: $ali;
+}
+
+$color1: #FFFFFF;
+$color2: #00171F;
+$color3: #000d11;
+$transition: 400ms;
+
+body{
+    .container{
+        @include displayFlex(column, center, center);
+        height: 100vh;
+        background: $color3;
+        &__dashboard{
+            text-align: center;
+            color: $color1;
+            width: 50%;
+            height: 50%;
+            &__gridbox{
+                background: $color2;
+                width: 100%;
+                height: 100%;
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1rem;
+                margin-top: 1rem;
+                padding: 3rem;
+                box-shadow: 0px 0px 15px black;
+                border-radius: 3rem;
+                &--item{
+                    cursor: pointer;
+                    @include displayFlex(column, center, center);
+                    border: 1px solid black;
+                    border-radius: 3rem;
+                    background: $color2;
+                    transition: $transition;
+                    opacity: 0.3;
+                    &:hover{
+                        opacity: 1;
+                        box-shadow: 0px 0px 20px black;
+                    }
+                }
+            }
+        }
+        &__projectScreen{
+            display: none;
+            &__gridbox{
+                display: grid;
+                grid-template-columns: 1fr 1fr 1fr;
+                gap: 1rem;
+                &--item{
+                    background: $color1;
+                    height: 35rem;
+                    width: 20rem;
+                    box-shadow: 0px 0px 8px gray;
+                    h1{
+                        text-align: center;
+                        background: $color2;
+                        color: $color1;
+                    }
+                    .field{
+                        @include displayFlex(column, none, none);
+                        padding: 20px;
+                        overflow-y: scroll;
+                        height: 80%;
+                    }
+                }
+                #to-do{
+                    height: 35rem;
+                    .head{
+                        @include displayFlex(none, none, center);
+                        textarea{
+                            height: 3rem;
+                            margin-left: 5px;
+                            margin-top: 5px;
+                            padding: 0.2rem;
+                        }
+                        button{
+                            width: 20%;
+                            height: 3rem;
+                            margin-top: 5px;
+                            margin-right: 5px;
+                            cursor: pointer;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+#card{
+    cursor: pointer;
+    @include displayFlex(row, space-between, center);
+    background: $color1;
+    box-shadow: 0px 0px 4px gray;
+    padding: 1rem;
+    margin-top: 0.5rem;
+    #delete-btn{
+        width: 30px;
+        cursor: pointer;
+        font-size: 20px;
+    }
+}
